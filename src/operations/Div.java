@@ -1,6 +1,6 @@
 package operations;
 
-public class Add extends Operations{
+public class Div extends Operations{
     @Override
     public void calculate(double x, double y) {
         res = x / y;
