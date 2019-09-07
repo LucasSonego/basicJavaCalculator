@@ -2,9 +2,14 @@ package app;
 
 import java.util.Scanner;
 
+import operations.Add;
+import operations.Mult;
+import operations.Sub;
+import operations.Div;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        float x = 0, y = 0;
+        double x = 0, y = 0;
         char operator = '?';
 
         Scanner scan = new Scanner(System.in);
@@ -34,13 +39,17 @@ public class App {
         scan.close();
 
         if (operator == '+') {
-            System.out.println(String.format("%.2f", x + y));
+            Add add = new Add();
+            add.calculate(x, y);
         } else if (operator == '-') {
-            System.out.println(String.format("%.2f", x - y));
+            Sub sub = new Sub();
+            sub.calculate(x, y);
         } else if (operator == '*') {
-            System.out.println(String.format("%.2f", x * y));
+            Mult mult = new Mult();
+            mult.calculate(x, y);
         } else if (operator == '/') {
-            System.out.println(String.format("%.2f", x / y));
+            Div div = new Div();
+            div.calculate(x, y);
         }
     }
 }
